@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>İyi Geceler ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#yazi {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+  text-shadow: 0 0 20px red;
+  z-index: 10;
+}
+
+.kalp {
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  animation: dus 5s linear infinite;
+}
+
+@keyframes dus {
+  0% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="yazi">
+  Seni çooook seviyorum ❤️<br>
+  İyi geceler bebeğim 🌙
+</div>
+
+<script>
+function kalpOlustur() {
+  const kalp = document.createElement("div");
+  kalp.classList.add("kalp");
+  kalp.innerHTML = "❤️";
+
+  kalp.style.left = Math.random() * 100 + "vw";
+  kalp.style.fontSize = (Math.random() * 20 + 10) + "px";
+  kalp.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+  document.body.appendChild(kalp);
+
+  setTimeout(() => {
+    kalp.remove();
+  }, 5000);
+}
+
+setInterval(kalpOlustur, 200);
+</script>
+
+</body>
+</html>
